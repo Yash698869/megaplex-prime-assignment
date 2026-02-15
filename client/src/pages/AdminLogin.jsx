@@ -14,7 +14,8 @@ function AdminLogin() {
     setError("");
 
     try {
-      await API.post("/login", { email, password });
+      const res = await API.post("/login", { email, password });
+      localStorage.setItem("adminToken", res.data.token);
       navigate("/admin/dashboard");
     } catch (err) {
       setError(err.response?.data?.error || "Login failed");

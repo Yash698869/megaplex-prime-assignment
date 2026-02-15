@@ -96,6 +96,7 @@ function AdminDashboard() {
 
   const handleLogout = async () => {
     await API.post("/logout");
+    localStorage.removeItem("adminToken");
     navigate("/admin");
   };
 
