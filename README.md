@@ -1,6 +1,6 @@
 # Megaplex Prime – Real Estate Website
 
-A dynamic real estate landing page with an admin panel for managing website content. Built as a full-stack application with React frontend and Node.js backend.
+A full-stack real estate landing page with a dynamic admin panel for content management. Built with React (Vite) on the frontend and Node.js + Express + MongoDB on the backend.
 
 ## Tech Stack
 
@@ -9,18 +9,20 @@ A dynamic real estate landing page with an admin panel for managing website cont
 | Frontend   | React.js (Vite)         |
 | Backend    | Node.js + Express       |
 | Database   | MongoDB (Mongoose ODM)  |
-| Styling    | CSS                     |
+| Styling    | Plain CSS               |
 
 ## Features
 
-- Public real estate landing page with multiple sections (Hero, Overview, Amenities, Floor Plans, Connectivity, About, Construction Updates, FAQ)
-- Dynamic text content loaded from MongoDB backend
-- Admin panel for editing all section content (titles, descriptions, lists)
-- Session-based admin authentication with fixed credentials
+- Single-page real estate website with dynamic content
+- Sections: Hero, Overview, Amenities, Floor Plans, Connectivity, About Developer, Construction Updates, FAQ
+- All text content loaded dynamically from MongoDB
+- Admin panel to edit content for every section
+- Fixed admin credentials (no user registration)
+- MongoDB persistence — changes reflect immediately after save
 - Responsive design
-- Static images only (no image CMS)
+- Static images only (no image upload/CMS)
 
-## Admin Login Credentials
+## Admin Credentials
 
 | Field    | Value            |
 |----------|------------------|
@@ -34,14 +36,14 @@ mexa/
 ├── client/                 # React frontend (Vite)
 │   ├── src/
 │   │   ├── api/            # Axios instance
-│   │   ├── components/     # UI components (Navbar, Hero, Overview, etc.)
+│   │   ├── components/     # UI components
 │   │   ├── pages/          # Home, AdminLogin, AdminDashboard
 │   │   └── styles/         # CSS files
 │   └── index.html
 ├── server/                 # Express backend
 │   ├── middleware/          # Auth middleware
 │   ├── models/             # Mongoose Section model
-│   ├── routes/             # Auth and Content routes
+│   ├── routes/             # Auth and Content API routes
 │   ├── seed.js             # Database seed script
 │   └── server.js           # Entry point
 └── README.md
@@ -76,12 +78,21 @@ npm run dev
 ```bash
 cd client
 npm install
+```
+
+Create a `.env` file in the `client/` directory (for local development):
+
+```
+VITE_API_BASE_URL=http://localhost:5000/api
+```
+
+Start the dev server:
+
+```bash
 npm run dev
 ```
 
-The frontend runs on `http://localhost:5173` and the backend on `http://localhost:5000`.
-
-***The admin login is also there on the footer of the home page.****
+Frontend runs on `http://localhost:5173`, backend on `http://localhost:5000`.
 
 ## API Endpoints
 
@@ -94,8 +105,22 @@ The frontend runs on `http://localhost:5173` and the backend on `http://localhos
 | POST   | /api/logout               | Admin    | Admin logout           |
 | GET    | /api/me                   | Public   | Check session status   |
 
-## Deployment Notes
+## Deployment
 
-- Frontend and backend are deployed separately
-- Set `MONGO_URI`, `SESSION_SECRET`, and `CLIENT_URL` environment variables in production
-- Update the API base URL in `client/src/api/api.js` for production
+| Service  | Link |
+|----------|------|
+| GitHub Repo | [github.com/Yash698869/megaplex-prime-assignment](https://github.com/Yash698869/megaplex-prime-assignment) |
+| Live Frontend (Vercel) | [megaplex-prime-assignment-vert.vercel.app](https://megaplex-prime-assignment-vert.vercel.app) |
+| Live Backend (Render) | [megaplex-prime-assignment.onrender.com](https://megaplex-prime-assignment.onrender.com) |
+
+### Environment Variables (Production)
+
+**Render (Backend):**
+- `MONGO_URI` — MongoDB connection string
+- `PORT` — Server port
+- `SESSION_SECRET` — Session secret key
+- `CLIENT_URL` — Vercel frontend URL
+- `NODE_ENV` — `production`
+
+**Vercel (Frontend):**
+- `VITE_API_BASE_URL` — Render backend API URL
