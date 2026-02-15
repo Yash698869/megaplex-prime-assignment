@@ -1,0 +1,242 @@
+
+.admin-loading {
+  text-align: center;
+  padding: 4rem;
+  font-size: 1.1rem;
+  color: #555;
+  font-family: "Poppins", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+.admin-btn {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.admin-btn.primary {
+  background: #c5e83a;
+  color: #333;
+}
+
+.admin-btn.primary:hover {
+  background: #b8db2f;
+}
+
+.admin-btn.primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.admin-btn.secondary {
+  background: #e0f2f1;
+  color: #2e7d32;
+}
+
+.admin-btn.secondary:hover {
+  background: #c8e6c9;
+}
+
+.admin-btn.danger {
+  background: #fff;
+  color: #d32f2f;
+  border: 1px solid #e0e0e0;
+}
+
+.admin-btn.danger:hover {
+  background: #ffebee;
+}
+
+.admin-field {
+  margin-bottom: 1rem;
+}
+
+.admin-field label,
+.admin-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 0.3rem;
+}
+
+.admin-field input,
+.admin-field textarea {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.92rem;
+  font-family: inherit;
+  color: #333;
+  background: #fff;
+}
+
+.admin-field input:focus,
+.admin-field textarea:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.15);
+}
+
+.admin-error {
+  color: #d32f2f;
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+.admin-message {
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Login Page ─────────────────────────────────── */
+.admin-login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eaf6ee;
+  font-family: "Poppins", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  padding: 2rem;
+}
+
+.admin-login-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.admin-login-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.admin-login-form .admin-btn.primary {
+  width: 100%;
+  padding: 0.65rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* ── Dashboard ──────────────────────────────────── */
+.admin-dashboard {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 3rem;
+  font-family: "Poppins", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  background: #f5faf6;
+  min-height: 100vh;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.admin-header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.admin-section-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.06);
+}
+
+.admin-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2e7d32;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #eaf6ee;
+}
+
+.admin-section-body {
+  margin-bottom: 0.5rem;
+}
+
+.admin-section-footer {
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* List rows (inline pair of inputs) */
+.admin-list-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.admin-list-row input {
+  flex: 1;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: inherit;
+}
+
+.admin-list-row input:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.15);
+}
+
+/* List blocks (stacked input + textarea) */
+.admin-list-block {
+  background: #f9fdf9;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.admin-list-block input,
+.admin-list-block textarea {
+  width: 100%;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  margin-bottom: 0.4rem;
+}
+
+.admin-list-block input:focus,
+.admin-list-block textarea:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.15);
+}
+
+.admin-list-block .admin-btn {
+  margin-top: 0.25rem;
+}
