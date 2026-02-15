@@ -81,6 +81,8 @@ npm run dev
 
 The frontend runs on `http://localhost:5173` and the backend on `http://localhost:5000`.
 
+***The admin login is also there on the footer of the home page.****
+
 ## API Endpoints
 
 | Method | Endpoint                  | Auth     | Description            |
