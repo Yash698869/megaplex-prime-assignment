@@ -28,35 +28,48 @@ function Home() {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <p className="loading">Loading...</p>;
+  if (loading) return (
+    <div className="home">
+      <Navbar />
+      <p className="loading">Loading content...</p>
+    </div>
+  );
+
+  const hasData = Object.keys(sections).length > 0;
 
   return (
     <div className="home">
       <Navbar />
-      <Hero data={sections.hero} />
-      <div className="section section-mint">
-        <Overview data={sections.overview} />
-      </div>
-      <div className="section section-mint">
-        <Amenities data={sections.amenities} />
-      </div>
-      <ExploreBuildings />
-      <div className="section section-white">
-        <FloorPlan />
-      </div>
-      <VideoSection />
-      <div className="section section-white">
-        <Connectivity data={sections.connectivity} />
-      </div>
-      <div className="section section-mint">
-        <About data={sections.about} />
-      </div>
-      <div className="section section-mint">
-        <Construction data={sections.construction} />
-      </div>
-      <div className="section section-white">
-        <Faq data={sections.faq} />
-      </div>
+      {hasData ? (
+        <>
+          <Hero data={sections.hero} />
+          <div className="section section-mint">
+            <Overview data={sections.overview} />
+          </div>
+          <div className="section section-mint">
+            <Amenities data={sections.amenities} />
+          </div>
+          <ExploreBuildings />
+          <div className="section section-white">
+            <FloorPlan />
+          </div>
+          <VideoSection />
+          <div className="section section-white">
+            <Connectivity data={sections.connectivity} />
+          </div>
+          <div className="section section-mint">
+            <About data={sections.about} />
+          </div>
+          <div className="section section-mint">
+            <Construction data={sections.construction} />
+          </div>
+          <div className="section section-white">
+            <Faq data={sections.faq} />
+          </div>
+        </>
+      ) : (
+        <p className="loading">Unable to load content. Please try again later.</p>
+      )}
 
       <footer className="footer">
         <div className="footer-top">
