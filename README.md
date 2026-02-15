@@ -29,6 +29,8 @@ A full-stack real estate landing page with a dynamic admin panel for content man
 | Email    | admin@gmail.com  |
 | Password | 1234             |
 
+**Admin login button is on the home page footer**
+
 ## Project Structure
 
 ```
